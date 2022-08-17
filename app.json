@@ -1,0 +1,65 @@
+{
+    "name": "Rocks VC Userbot V1",
+    "description": "Telegram Userbot To Play Audio And Video Song On VC Chat",
+    "repository": "https://github.com/jankarikiduniya/RocksMusicPlayer-V1",
+    "logo": "https://telegra.ph/file/7fbaae079e71659672dde.jpg",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "voicechat",
+      "userbot",
+      "music",
+      "player",
+      "python",
+      "pyrogram",
+      "py-tgcalls",
+      "musicplayer"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "Telegram app id, get it from https://my.telegram.org/apps",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Telegram app hash, get it from https://my.telegram.org/apps",
+        "required": true
+      },
+      "SESSION": {
+        "description": "Pyrogram session string, get it from https://replit.com/@AssadAli/String-Session-Generator",
+        "required": true
+      },
+      "SUDOERS": {
+        "description": "ID of sudo users who have special access (separate multiple ids with space)",
+        "required": false
+      },
+      "PREFIX": {
+        "description": "Bot commad prefix or handler (separate multiple prefix with space)",
+        "value": "/",
+        "required": false
+      },
+      "LANGUAGE": {
+        "description": "An available bot language (read the README.md for more info)",
+        "value": "en",
+        "required": false
+      },
+      "CUSTOM_QUALITY": {
+        "description": "An available stream quality (read the README.md for more info)",
+        "value": "high",
+        "required": false
+      }
+    },
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+      },
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
